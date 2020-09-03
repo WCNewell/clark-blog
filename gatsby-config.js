@@ -48,13 +48,13 @@ module.exports = {
         {
         resolve: `gatsby-plugin-manifest`,
         options: {
-            name: `gatsby-starter-default`,
-            short_name: `starter`,
+            name: `clark-newell-blog`,
+            short_name: `blog`,
             start_url: `/`,
             background_color: `#FFFFFF`,
             theme_color: `#FFFFFF`,
             display: `minimal-ui`,
-            icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+            icon: `src/images/clark-logo.png`, // This path is relative to the root of the site.
         },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality with a ServiceWorker
