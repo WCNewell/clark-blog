@@ -1,21 +1,21 @@
 html,
 body {
-  margin: 5px;
-  padding: 5px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  display: flex;
+    margin: 5px;
+    padding: 5px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
 }
 
 body.light-mode {
-  background-color: #effffa;
-  transition: background-color 0.3s ease;
-  color: #0b0111;
+    background-color: #effffa;
+    transition: background-color 0.3s ease;
+    color: #0b0111;
 }
 
 body.dark-mode {
-  background-color: #0b0111;
-  color: #effffa;
+    background-color: #0b0111;
+    color: #effffa;
 }
 
 .mode-icon {
@@ -26,6 +26,10 @@ body.dark-mode {
     margin-right: 3em;
 }
 
-.main {
-  justify-content: center;
+.social-icon {
+    fill: #ff0dbf;
+    height: 35px;
+    width: 35px;
+    margin-left: 3em;
+    margin-right: 3em;
 }
