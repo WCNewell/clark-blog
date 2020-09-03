@@ -23,7 +23,7 @@ module.exports = {
                     wpcom_user: process.env.WP_USERNAME,
                     wpcom_pass: process.env.WP_PASSWORD,
                     },
-                verboseOutput: true,
+                verboseOutput: false,
             },
         },
         {
