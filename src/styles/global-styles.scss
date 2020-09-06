@@ -11,11 +11,29 @@ body.light-mode {
     background-color: #effffa;
     transition: background-color 0.3s ease;
     color: #0b0111;
+
+    .logo {
+        fill: #0b0111;
+        height: 50px;
+        width: 50px;
+    }
 }
 
 body.dark-mode {
     background-color: #0b0111;
     color: #effffa;
+
+    .logo {
+        fill: #effffa;
+        height: 50px;
+        width: 50px;
+    }
+}
+
+.logo {
+    fill: #effffa;
+    height: 50px;
+    width: 50px;
 }
 
 .mode-icon {

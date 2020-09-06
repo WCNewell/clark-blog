@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from "prop-types"
 import useDarkMode from 'use-dark-mode'
-import Header from './header'
+import Logo from '../assets/clarklogo.inline.svg'
+import Nav from './nav'
 import RecentPosts from './recent-posts'
 import Footer from './footer'
 
@@ -27,23 +28,26 @@ const App = ({ children }) => {
         <ThemeContext.Provider value={'night'}>
         <>
             <Layout />
-                <ModeIcons>
-                    <SunIcon    className='mode-icon'
-                                onClick={() => {
-                                    toggleTheme()
-                                    darkMode.disable()
-                                }}
-                                alt='sun icon for light mode'
-                    />
-                    <MoonIcon   className='mode-icon' 
-                                onClick={() => {
-                                    toggleTheme()
-                                    darkMode.enable()
-                                }}
-                                alt='moon icon for dark star mode'
-                    />
-                </ModeIcons>
-                <Header />
+                <Brand>
+                    <Logo className='logo'/>
+                    <Nav />
+                    <ModeIcons>
+                        <SunIcon    className='mode-icon'
+                                    onClick={() => {
+                                        toggleTheme()
+                                        darkMode.disable()
+                                    }}
+                                    alt='sun icon for light mode'
+                        />
+                        <MoonIcon   className='mode-icon' 
+                                    onClick={() => {
+                                        toggleTheme()
+                                        darkMode.enable()
+                                    }}
+                                    alt='moon icon for dark star mode'
+                        />
+                    </ModeIcons>
+                </Brand>
                 <RecentPosts />
                     {children}
                 <Footer />
@@ -61,10 +65,13 @@ const Layout = () => {
         )
 }
 
-const ModeIcons = styled.div`
+const Brand = styled.div`
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    margin: 3rem;
+`
+
+const ModeIcons = styled.div`
+    
 `
 
 App.propTypes = {
