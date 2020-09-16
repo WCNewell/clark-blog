@@ -28,26 +28,26 @@ const App = ({ children }) => {
         <ThemeContext.Provider value={'night'}>
         <>
             <Layout />
-                <Brand>
+                <Header>
                     <Logo className='logo'/>
+                    <h1>clark newell</h1>
+                    <h2>web development journey</h2>
                     <Nav />
-                    <ModeIcons>
-                        <SunIcon    className='mode-icon'
-                                    onClick={() => {
-                                        toggleTheme()
-                                        darkMode.disable()
-                                    }}
-                                    alt='sun icon for light mode'
-                        />
-                        <MoonIcon   className='mode-icon' 
-                                    onClick={() => {
-                                        toggleTheme()
-                                        darkMode.enable()
-                                    }}
-                                    alt='moon icon for dark star mode'
-                        />
-                    </ModeIcons>
-                </Brand>
+                    <SunIcon    className='mode-icon'
+                                onClick={() => {
+                                    toggleTheme()
+                                    darkMode.disable()
+                                }}
+                                alt='sun icon for light mode'
+                    />
+                    <MoonIcon   className='mode-icon' 
+                                onClick={() => {
+                                    toggleTheme()
+                                    darkMode.enable()
+                                }}
+                                alt='moon icon for dark star mode'
+                    />
+                </Header>
                 <RecentPosts />
                     {children}
                 <Footer />
@@ -65,13 +65,10 @@ const Layout = () => {
         )
 }
 
-const Brand = styled.div`
+const Header = styled.div`
     display: flex;
+    position: fixed;
     margin: 3rem;
-`
-
-const ModeIcons = styled.div`
-    
 `
 
 App.propTypes = {
