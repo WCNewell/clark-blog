@@ -23,7 +23,7 @@
 }
 
 $white: #effffa;
-$purple: #0b0111;
+$black: #0b0111;
 $pink: #ff0dbf;
 $gold: #ffd700;
 
@@ -37,19 +37,27 @@ body {
 body.light-mode {
     background-color: $white;
     transition: background-color 0.3s ease;
-    color: $purple;
+    color: $black;
 
+    a {
+        color: $black;
+    }
+    
     .logo {
-        fill: $purple;
+        fill: $black;
         height: 5rem;
         width: 5rem;
     }
 }
 
 body.dark-mode {
-    background-color: $purple;
+    background-color: $black;
     color: $white;
 
+    a {
+        color: $white
+    }
+    
     .logo {
         fill: $white;
         height: 5rem;
@@ -65,6 +73,41 @@ a {
         color: $pink;
     }
 }
+
+.ReactStickyHeader_root {
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+  }
+  .ReactStickyHeader_root * {
+    box-sizing: border-box;
+  }
+  .ReactStickyHeader_fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 60;
+  }
+  .ReactStickyHeader_background,
+  .ReactStickyHeader_foreground,
+  .ReactStickyHeader_midground,
+  .ReactStickyHeader_background-bg {
+    background-position: center top;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 30;
+  }
+  .ReactStickyHeader_midground {
+    position: fixed;
+    z-index: 20;
+    transform: translateY(-100%);
+  }
+  .ReactStickyHeader_background-bg {
+    z-index: 10;
+  }
 
 .mode-icon {
     fill: $gold;
