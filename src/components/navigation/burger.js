@@ -25,12 +25,12 @@ export default Burger;
 export const StyledBurger = styled.button`
     position: absolute;
     top: 5%;
-    right: 2rem;
+    right: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 2rem;
-    height: 2rem;
+    width: 2.0rem;
+    height: 2.0rem;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -39,7 +39,7 @@ export const StyledBurger = styled.button`
     outline: none;
 
     span {
-        width: 2rem;
+        width: 2.0rem;
         height: 0.25rem;
         background: #ff0dbf;
         border-radius: 10px;

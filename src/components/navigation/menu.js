@@ -44,9 +44,7 @@ export const StyledMenu = styled.nav`
 
     a {
         font-size: 2rem;
-        text-transform: uppercase;
         padding: 2rem 0;
-        font-weight: bold;
         letter-spacing: 0.5rem;
         color: ${({ theme }) => theme.primaryDark};
         outline: none;
