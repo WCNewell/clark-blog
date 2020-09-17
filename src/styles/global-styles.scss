@@ -22,6 +22,11 @@
     order: $val;
 }
 
+$white: #effffa;
+$purple: #0b0111;
+$pink: #ff0dbf;
+$gold: #ffd700;
+
 html,
 body {
     margin: 1rem;
@@ -30,40 +35,51 @@ body {
 }
 
 body.light-mode {
-    background-color: #effffa;
+    background-color: $white;
     transition: background-color 0.3s ease;
-    color: #0b0111;
+    color: $purple;
 
     .logo {
-        fill: #0b0111;
-        height: 4rem;
-        width: 4rem;
+        fill: $purple;
+        height: 5rem;
+        width: 5rem;
     }
 }
 
 body.dark-mode {
-    background-color: #0b0111;
-    color: #effffa;
+    background-color: $purple;
+    color: $white;
 
     .logo {
-        fill: #effffa;
-        height: 4rem;
-        width: 4rem;
+        fill: $white;
+        height: 5rem;
+        width: 5rem;
+    }
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+
+    :hover {
+        color: $pink;
     }
 }
 
 .mode-icon {
-    fill: gold;
+    fill: $gold;
     height: 2.5rem;
     width: 2.5rem;
     margin-left: 2rem;
     margin-right: 2rem;
+    cursor: pointer;
 }
 
 .social-icon {
-    fill: #ff0dbf;
+    fill: $pink;
     height: 2rem;
     width: 2rem;
     margin-left: 2rem;
     margin-right: 2rem;
+    cursor: pointer;
 }

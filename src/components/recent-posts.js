@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 const RECENT_POSTS_QUERY = graphql`
     query RecentPostsQuery {
-        allWordpressPost(filter: {status: {eq: "publish"}}, limit: 20, sort: {fields: [date], order: DESC}) {
+        allWordpressPost(filter: {status: {eq: "publish"}}, limit: 5, sort: {fields: [date], order: DESC}) {
             edges {
                 node {
                     id

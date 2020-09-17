@@ -31,7 +31,11 @@ const App = ({ children }) => {
                 <Header>
                     <Logo className='logo'/>
                     <h1>clark newell</h1>
-                    <h2>web development journey</h2>
+                    <h2>web development + <a
+                        alt='link to Clark Newell fitness blog'
+                        href='https://clarkfitness.netlify.com'>
+                        fitness </a>
+                        journey</h2>
                     <Nav />
                     <SunIcon    className='mode-icon'
                                 onClick={() => {
@@ -66,9 +70,6 @@ const Layout = () => {
 }
 
 const Header = styled.div`
-    display: flex;
-    position: fixed;
-    margin: 3rem;
 `
 
 App.propTypes = {
