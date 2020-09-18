@@ -55,7 +55,7 @@ body.dark-mode {
     color: $white;
 
     a {
-        color: $white
+        color: $white;
     }
     
     .logo {
@@ -74,40 +74,18 @@ a {
     }
 }
 
-.ReactStickyHeader_root {
-    width: 100%;
+.sticky-wrapper {
     position: relative;
-    box-sizing: border-box;
-  }
-  .ReactStickyHeader_root * {
-    box-sizing: border-box;
-  }
-  .ReactStickyHeader_fixed {
+    height: 5rem;
+}
+  
+.sticky .sticky-inner {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 60;
-  }
-  .ReactStickyHeader_background,
-  .ReactStickyHeader_foreground,
-  .ReactStickyHeader_midground,
-  .ReactStickyHeader_background-bg {
-    background-position: center top;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: 30;
-  }
-  .ReactStickyHeader_midground {
-    position: fixed;
-    z-index: 20;
-    transform: translateY(-100%);
-  }
-  .ReactStickyHeader_background-bg {
-    z-index: 10;
-  }
+    z-index: 0;
+}
 
 .mode-icon {
     fill: $gold;

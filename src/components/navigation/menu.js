@@ -2,6 +2,7 @@ import React from 'react';
 import { bool } from 'prop-types'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
+import '../../styles/global-styles.scss'
 
 const Menu = ({ open, ...props }) => {
   
@@ -12,12 +13,13 @@ const Menu = ({ open, ...props }) => {
         <StyledMenu open={open} aria-hidden={!isHidden} {...props}>
             <Link to="/" tabIndex={tabIndex} onClick={isHidden === true}>
                 <span aria-hidden="true"></span>
-                    home
+                    <h3>home</h3>
             </Link>
             <Link to="/about" tabIndex={tabIndex} onClick={isHidden === true}>
                 <span aria-hidden="true"></span>
-                about
+                <h3>about</h3>
             </Link>
+            <a href=''><h3>fitness blog</h3></a>
         </StyledMenu>
     )
 }
@@ -32,7 +34,6 @@ export const StyledMenu = styled.nav`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: ${({ theme }) => theme.primaryLight};
     height: 100vh;
     text-align: left;
     padding: 2rem;
@@ -45,8 +46,6 @@ export const StyledMenu = styled.nav`
     a {
         font-size: 2rem;
         padding: 2rem 0;
-        letter-spacing: 0.5rem;
-        color: ${({ theme }) => theme.primaryDark};
         outline: none;
         text-decoration: none;
         transition: color 0.3s linear;

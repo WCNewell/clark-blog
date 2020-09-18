@@ -1,10 +1,8 @@
 import React from 'react'
 import PropTypes from "prop-types"
 import useDarkMode from 'use-dark-mode'
-import StickyHeader from 'react-sticky-header'
 import Logo from '../assets/clarklogo.inline.svg'
 import Nav from './nav'
-import RecentPosts from './recent-posts'
 import Footer from './footer'
 
 import StarLayout from './star-layout'
@@ -15,58 +13,72 @@ import MoonIcon from '../assets/moon.inline.svg'
 
 export const ThemeContext = React.createContext('day')
 
-const App = () => {
+const App = ({ children }) => {
     const [theme, setTheme] = React.useState('night')
     const darkMode = useDarkMode(false)
-
   
     const toggleTheme = () => {
         theme === darkMode ? setTheme('night') : setTheme('day')
     }
   
-    const Header = () => (
-        <StickyHeader
-            header={
-                <div className="Header_root">
-                                        <Logo className='logo'/>
+    const Header = () => {
+        const [isSticky, setSticky] = React.useState(false)
+        const ref = React.useRef(null)
+        const handleScroll = () => {
+            if (ref.current) {
+                setSticky(ref.current.getBoundingClientRect().top <= 0)
+            }
+        }
 
-        <h1 className="Header_title">clark newell</h1>
-        <h2>web development + <a
-                        alt='link to Clark Newell fitness blog'
-                        href='https://clarkfitness.netlify.com'>
-                        fitness </a>
-                        journey</h2>
-            
-            <SunIcon    className='mode-icon'
-                                onClick={() => {
-                                    toggleTheme()
-                                    darkMode.disable()
-                                }}
-                                alt='sun icon for light mode'
-                    />
-                    <MoonIcon   className='mode-icon' 
-                                onClick={() => {
-                                    toggleTheme()
-                                    darkMode.enable()
-                                }}
-                                alt='moon icon for dark star mode'
-            
-            />
-            <Nav />
-      </div>
-            }>
-                <section></section>
-        </StickyHeader>
-    )
-    
+        React.useEffect(() => {
+            window.addEventListener('scroll', handleScroll)
+
+            return () => {
+                window.removeEventListener('scroll', () => handleScroll)
+            }
+        }, [])
+
+        return (
+            <>
+                <p>What goes here?</p>
+                <div className={`sticky-wrapper${isSticky ? ' sticky' : ''}`} ref={ref}>
+                    <div className='sticky-inner'>
+                        <Logo className='logo'/>
+                        <h1>clark newell</h1>
+                        <h3>web development + <a
+                                alt='link to Clark Newell fitness blog'
+                                href=''>
+                                fitness </a>journey
+                        </h3>
+                        <SunIcon    className='mode-icon'
+                                    onClick={() => {
+                                        toggleTheme()
+                                        darkMode.disable()
+                                    }}
+                                    alt='sun icon for light mode'
+                        />
+                        <MoonIcon   className='mode-icon' 
+                                    onClick={() => {
+                                        toggleTheme()
+                                        darkMode.enable()
+                                    }}
+                                    alt='moon icon for dark star mode'
+                        />
+                        <Nav />
+                    </div>
+                </div>
+            </>
+        )
+    }
+
     return (
         <ThemeContext.Provider value={'night'}>
-        <>
-            <Layout />
-                <Header />
-                <RecentPosts />
-                <Footer />
-        </>
+            <>
+                <Layout />
+                    <Header />
+                        {children}
+                    <Footer />
+            </>
         </ThemeContext.Provider>
     )
 }
