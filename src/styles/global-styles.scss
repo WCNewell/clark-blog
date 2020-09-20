@@ -29,8 +29,6 @@ $gold: #ffd700;
 
 html,
 body {
-    margin: 1rem;
-    padding: 1rem;
     @include flexbox();
 }
 
@@ -45,10 +43,18 @@ body.light-mode {
     
     .logo {
         fill: $black;
-        height: 5rem;
-        width: 5rem;
+        height: 3rem;
+        width: 3rem;
     }
-}
+
+    .menu-item {
+        color: $black;
+    }
+
+    .footer-text {
+        color: $white
+    }
+} 
 
 body.dark-mode {
     background-color: $black;
@@ -60,23 +66,35 @@ body.dark-mode {
     
     .logo {
         fill: $white;
-        height: 5rem;
-        width: 5rem;
+        height: 3rem;
+        width: 3rem;
+    }
+    
+    .menu-item {
+        color: $black;
+    }
+
+    .footer-text {
+        color: $white;
+        padding: 1rem;
     }
 }
 
 a {
     text-decoration: none;
     cursor: pointer;
-
+    
     :hover {
+        color: $pink;
+    }
+
+    :visited {
         color: $pink;
     }
 }
 
 .sticky-wrapper {
     position: relative;
-    height: 5rem;
 }
   
 .sticky .sticky-inner {
@@ -87,10 +105,20 @@ a {
     z-index: 0;
 }
 
+.logo-name {
+    display: flex;
+    align-content: flex-start;
+
+    .mode-icons {
+        justify-content: space-between;
+    }
+
+}
+
 .mode-icon {
     fill: $gold;
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
     margin-left: 2rem;
     margin-right: 2rem;
     cursor: pointer;
@@ -104,3 +132,14 @@ a {
     margin-right: 2rem;
     cursor: pointer;
 }
+
+.post-title:hover, .sub-title:hover {
+    color: $pink;
+}
+
+.footer {
+    height: 5rem;
+    width: auto;
+    background-color: $pink;
+}
+

@@ -6,12 +6,20 @@ import Nav from './nav'
 import Footer from './footer'
 
 import StarLayout from './star-layout'
+import styled from 'styled-components'
 import '../styles/global-styles.scss'
 
 import SunIcon from '../assets/sun.inline.svg'
 import MoonIcon from '../assets/moon.inline.svg'
 
 export const ThemeContext = React.createContext('day')
+
+const Layout = () => {
+    const theme = React.useContext(ThemeContext)
+        return (
+                theme === 'night' ? <StarLayout /> : null
+        )
+}
 
 const App = ({ children }) => {
     const [theme, setTheme] = React.useState('night')
@@ -40,32 +48,36 @@ const App = ({ children }) => {
 
         return (
             <>
-                <p>What goes here?</p>
                 <div className={`sticky-wrapper${isSticky ? ' sticky' : ''}`} ref={ref}>
                     <div className='sticky-inner'>
-                        <Logo className='logo'/>
-                        <h1>clark newell</h1>
-                        <h3>web development + <a
-                                alt='link to Clark Newell fitness blog'
-                                href=''>
-                                fitness </a>journey
-                        </h3>
-                        <SunIcon    className='mode-icon'
-                                    onClick={() => {
-                                        toggleTheme()
-                                        darkMode.disable()
-                                    }}
-                                    alt='sun icon for light mode'
-                        />
-                        <MoonIcon   className='mode-icon' 
-                                    onClick={() => {
-                                        toggleTheme()
-                                        darkMode.enable()
-                                    }}
-                                    alt='moon icon for dark star mode'
-                        />
+                        
                         <Nav />
                     </div>
+                </div>
+                <div className='logo-name'>
+                    <Logo className='logo' />
+                    <h1>clark newell</h1>    
+                </div>
+                <div className='mode-icons'>    
+                    <SunIcon    className='mode-icon'
+                                onClick={() => {
+                                    toggleTheme()
+                                    darkMode.disable()
+                                }}
+                                alt='sun icon for light mode'
+                    />
+                    <MoonIcon   className='mode-icon' 
+                                onClick={() => {
+                                    toggleTheme()
+                                    darkMode.enable()
+                                }}
+                                alt='moon icon for dark star mode'
+                    />
+                    <h3>web development + <a className='sub-title'
+                            alt='link to Clark Newell fitness blog'
+                            href=''>
+                            fitness </a>journey
+                    </h3>
                 </div>
             </>
         )
@@ -74,10 +86,13 @@ const App = ({ children }) => {
     return (
         <ThemeContext.Provider value={'night'}>
             <>
+                <Main>
                 <Layout />
                     <Header />
                         {children}
-                    <Footer />
+                </Main>
+                <Footer />
+                
             </>
         </ThemeContext.Provider>
     )
@@ -85,13 +100,11 @@ const App = ({ children }) => {
 
 export default App
 
-const Layout = () => {
-    const theme = React.useContext(ThemeContext)
-        return (
-                theme === 'night' ? <StarLayout /> : null
-        )
-}
-
 App.propTypes = {
     children: PropTypes.node.isRequired,
 }
+
+const Main = styled.div`
+    margin-left: 1rem;
+    margin-right: 1rem;
+`
