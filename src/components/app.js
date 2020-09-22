@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from "prop-types"
 import useDarkMode from 'use-dark-mode'
+import { Link } from 'gatsby'
 import Logo from '../assets/clarklogo.inline.svg'
 import Nav from './nav'
 import Footer from './footer'
@@ -54,7 +55,9 @@ const App = ({ children }) => {
                     </div>
                 </div>
                 <Brand>
-                    <Logo className='logo' />
+                    <Link to="/">
+                        <Logo className='logo' />
+                    </Link>
                     <Name className='name'>
                         <h1>clark newell</h1>    
                     </Name>
