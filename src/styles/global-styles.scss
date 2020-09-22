@@ -57,17 +57,15 @@ body.light-mode {
     }
 
     .footer {
-        height: 5rem;
+        height: 7rem;
         width: auto;
         background-color: $blue;
 
         .footer-text {
             color: $white;
             padding: 1rem;
-        }
-    }
-    
-    
+        }    
+    }    
 } 
 
 body.dark-mode {
@@ -89,14 +87,14 @@ body.dark-mode {
     }
 
     .footer {
-        height: 5rem;
+        height: 7rem;
         width: auto;
         background-color: $pink;
 
         .footer-text {
             color: $white;
             padding: 1rem;
-        }
+        }   
     }    
 }
 
@@ -134,13 +132,14 @@ a {
     cursor: pointer;
 }
 
-.social-icon {
-    fill: $pink;
-    height: 2rem;
-    width: 2rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
+.social-icons {
+    fill: $white;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
     cursor: pointer;
+    margin-bottom: 1rem;
 }
 
 .post-title:hover, .sub-title:hover {
