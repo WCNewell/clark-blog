@@ -60,12 +60,14 @@ body.light-mode {
         height: 5rem;
         width: auto;
         background-color: $blue;
+
+        .footer-text {
+            color: $white;
+            padding: 1rem;
+        }
     }
     
-    .footer-text {
-        color: $white;
-        margin-top: 1rem;
-    }
+    
 } 
 
 body.dark-mode {
@@ -90,12 +92,12 @@ body.dark-mode {
         height: 5rem;
         width: auto;
         background-color: $pink;
-    }
-    
-    .footer-text {
-        color: $white;
-        margin-top: 1rem;
-    }
+
+        .footer-text {
+            color: $white;
+            padding: 1rem;
+        }
+    }    
 }
 
 a {
