@@ -49,36 +49,32 @@ const App = ({ children }) => {
         return (
             <>
                 <div className={`sticky-wrapper${isSticky ? ' sticky' : ''}`} ref={ref}>
-                    <div className='sticky-inner'>
-                        
+                    <div className='sticky-inner'> 
                         <Nav />
                     </div>
                 </div>
-                <div className='logo-name'>
+                <Brand>
                     <Logo className='logo' />
-                    <h1>clark newell</h1>    
-                </div>
-                <div className='mode-icons'>    
-                    <SunIcon    className='mode-icon'
-                                onClick={() => {
-                                    toggleTheme()
-                                    darkMode.disable()
-                                }}
-                                alt='sun icon for light mode'
-                    />
-                    <MoonIcon   className='mode-icon' 
-                                onClick={() => {
-                                    toggleTheme()
-                                    darkMode.enable()
-                                }}
-                                alt='moon icon for dark star mode'
-                    />
-                    <h3>web development + <a className='sub-title'
-                            alt='link to Clark Newell fitness blog'
-                            href=''>
-                            fitness </a>journey
-                    </h3>
-                </div>
+                    <Name className='name'>
+                        <h1>clark newell</h1>    
+                    </Name>
+                    <ModeIcons>    
+                        <SunIcon    className='mode-icon'
+                                    onClick={() => {
+                                        toggleTheme()
+                                        darkMode.disable()
+                                    }}
+                                    alt='sun icon for light mode'
+                        />
+                        <MoonIcon   className='mode-icon' 
+                                    onClick={() => {
+                                        toggleTheme()
+                                        darkMode.enable()
+                                    }}
+                                    alt='moon icon for dark star mode'
+                        />
+                    </ModeIcons>
+                </Brand>
             </>
         )
     }
@@ -104,7 +100,25 @@ App.propTypes = {
     children: PropTypes.node.isRequired,
 }
 
+const Brand = styled.div`
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-bottom: 1rem;
+`
+
+const Name = styled.div`
+    margin-top: 1.0rem;
+    margin-left: 0.5rem;
+    flex: 3;
+`
+
+const ModeIcons = styled.div`
+    flex: 1 auto;
+`
+
 const Main = styled.div`
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 `

@@ -26,6 +26,7 @@ $white: #effffa;
 $black: #0b0111;
 $pink: #ff0dbf;
 $gold: #ffd700;
+$blue: #0ecee3;
 
 html,
 body {
@@ -47,12 +48,23 @@ body.light-mode {
         width: 3rem;
     }
 
+    .name {
+        color: $blue;
+    }
+    
     .menu-item {
         color: $black;
     }
 
+    .footer {
+        height: 5rem;
+        width: auto;
+        background-color: $blue;
+    }
+    
     .footer-text {
-        color: $white
+        color: $white;
+        margin-top: 1rem;
     }
 } 
 
@@ -74,9 +86,15 @@ body.dark-mode {
         color: $black;
     }
 
+    .footer {
+        height: 5rem;
+        width: auto;
+        background-color: $pink;
+    }
+    
     .footer-text {
         color: $white;
-        padding: 1rem;
+        margin-top: 1rem;
     }
 }
 
@@ -105,22 +123,12 @@ a {
     z-index: 0;
 }
 
-.logo-name {
-    display: flex;
-    align-content: flex-start;
-
-    .mode-icons {
-        justify-content: space-between;
-    }
-
-}
-
 .mode-icon {
     fill: $gold;
-    height: 1.5rem;
-    width: 1.5rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    height: 1.25rem;
+    width: 1.25rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
     cursor: pointer;
 }
 
@@ -137,9 +145,19 @@ a {
     color: $pink;
 }
 
-.footer {
-    height: 5rem;
-    width: auto;
-    background-color: $pink;
-}
 
+
+// May need to employ media queries, i.e.:
+// need to look up what em's to use for medium and small screens
+// Or...try mobile *first* and use media queries for medium and large screens!
+// @media all and (max-width: 50em) { // also use max-min?
+//     .body {
+
+//     }
+// }
+
+// @media all and (max-width: 150em) { // also use max-min?
+//     .body {
+
+//     }
+// }
