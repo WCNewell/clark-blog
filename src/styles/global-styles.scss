@@ -6,21 +6,21 @@
     display: flex;
 }
 
-@mixin flex($values) {
-    -webkit-box-flex: $values;
-    -moz-box-flex: $values;
-    -webkit-flex: $values;
-    -ms-flex: $values;
-    flex: $values;
-}
+// @mixin flex($values) {
+//     -webkit-box-flex: $values;
+//     -moz-box-flex: $values;
+//     -webkit-flex: $values;
+//     -ms-flex: $values;
+//     flex: $values;
+// }
 
-@mixin order($val) {
-    -webkit-box-ordinal-group: $val;
-    -moz-box-ordinal-group: $val;
-    -ms-flex-order: $val;
-    -webkit-order: $val;
-    order: $val;
-}
+// @mixin order($val) {
+//     -webkit-box-ordinal-group: $val;
+//     -moz-box-ordinal-group: $val;
+//     -ms-flex-order: $val;
+//     -webkit-order: $val;
+//     order: $val;
+// }
 
 $white: #effffa;
 $black: #0b0111;
@@ -28,15 +28,27 @@ $pink: #ff0dbf;
 $gold: #ffd700;
 $blue: #0ecee3;
 
-html,
-body {
+html, body {
     @include flexbox();
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+    height: -webkit-fil-available;
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    text-rendering: optimizeLegibility;
 }
 
 body.light-mode {
     background-color: $white;
     transition: background-color 0.3s ease;
     color: $black;
+    height: 100vh;
 
     a {
         color: $black;
@@ -71,6 +83,7 @@ body.light-mode {
 body.dark-mode {
     background-color: $black;
     color: $white;
+    height: 100vh;
 
     a {
         color: $white;
@@ -117,7 +130,6 @@ a {
   
 .sticky .sticky-inner {
     position: fixed;
-    top: 0.5rem;
     left: 0;
     right: 0.5rem;
     z-index: 0;

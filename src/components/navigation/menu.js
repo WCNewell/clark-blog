@@ -11,7 +11,7 @@ const Menu = ({ open, ...props }) => {
 
     return (
         <StyledMenu open={open} aria-hidden={!isHidden} {...props}>
-            <a href=''><h3>fitness blog</h3></a>
+            <a className='menu-item' href='https://www.netlify.com/clarkfitness'><h3>fitness blog</h3></a>
             <Link className='menu-item' to="/" tabIndex={tabIndex} onClick={isHidden === true}>
                 <span aria-hidden="true"></span>
                     <h3>home</h3>
@@ -37,17 +37,16 @@ export default Menu
 export const StyledMenu = styled.nav`
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     height: 100vh;
     text-align: left;
     padding: 2rem;
     position: absolute;
-    top: 0;
     right: -275px;
     background-color: #effffa;
     color:  #0b0111;
     transition: transform 0.3s ease-in-out;
-    transform: ${({ open }) => open ? 'translateX(-100%)' : 'translateX(0)'};
+    transform: ${({ open }) => open ? 'translateX(-150%)' : 'translateX(0)'};
 
     a {
         font-size: 2rem;

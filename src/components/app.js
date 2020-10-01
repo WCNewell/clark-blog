@@ -111,7 +111,7 @@ const Brand = styled.div`
 `
 
 const Name = styled.div`
-    margin-top: 1.0rem;
+    margin-top: 1rem;
     margin-left: 0.5rem;
     flex: 3;
 `

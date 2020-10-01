@@ -29,8 +29,8 @@ export const StyledBurger = styled.button`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 2.0rem;
-    height: 2.0rem;
+    width: 2rem;
+    height: 2rem;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -38,8 +38,12 @@ export const StyledBurger = styled.button`
     z-index: 10;
     outline: none;
 
+    &:focus {
+        outline: none;
+    }
+    
     span {
-        width: 2.0rem;
+        width: 2rem;
         height: 0.25rem;
         background: #ff0dbf;
         border-radius: 10px;
