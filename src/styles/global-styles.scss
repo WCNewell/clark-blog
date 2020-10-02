@@ -30,10 +30,6 @@ $blue: #0ecee3;
 
 html, body {
     @include flexbox();
-    margin: 0px;
-    padding: 0px;
-    height: 100vh;
-    height: -webkit-fil-available;
 }
 
 *, *::after, *::before {
@@ -41,6 +37,8 @@ html, body {
 }
 
 body {
+    height: 100vh -webkit-fill-available;
+    width: 100vw -webkit-fill-available;
     text-rendering: optimizeLegibility;
 }
 
@@ -48,7 +46,6 @@ body.light-mode {
     background-color: $white;
     transition: background-color 0.3s ease;
     color: $black;
-    height: 100vh;
 
     a {
         color: $black;
@@ -83,7 +80,6 @@ body.light-mode {
 body.dark-mode {
     background-color: $black;
     color: $white;
-    height: 100vh;
 
     a {
         color: $white;
@@ -93,6 +89,8 @@ body.dark-mode {
         fill: $white;
         height: 3rem;
         width: 3rem;
+        display: flex;
+        justify-content: center;
     }
     
     .menu-item {

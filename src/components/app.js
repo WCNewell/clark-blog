@@ -49,17 +49,12 @@ const App = ({ children }) => {
 
         return (
             <>
-                <div className={`sticky-wrapper${isSticky ? ' sticky' : ''}`} ref={ref}>
-                    <div className='sticky-inner'> 
-                        <Nav />
-                    </div>
-                </div>
                 <Brand>
                     <Link to="/">
                         <Logo className='logo' />
                     </Link>
-                    <Name className='name'>
-                        <h1>clark newell</h1>    
+                    <Name>
+                        <h1 className='name'>clark newell</h1>
                     </Name>
                     <ModeIcons>    
                         <SunIcon    className='mode-icon'
@@ -77,6 +72,13 @@ const App = ({ children }) => {
                                     alt='moon icon for dark star mode'
                         />
                     </ModeIcons>
+                    <Menu>
+                        <div className={`sticky-wrapper${isSticky ? ' sticky' : ''}`} ref={ref}>
+                            <div className='sticky-inner'> 
+                                <Nav />
+                            </div>
+                        </div>
+                    </Menu>
                 </Brand>
             </>
         )
@@ -88,10 +90,11 @@ const App = ({ children }) => {
                 <Main>
                 <Layout />
                     <Header />
+                    <Content>
                         {children}
+                    </Content>
                 </Main>
-                <Footer />
-                
+                <Footer />    
             </>
         </ThemeContext.Provider>
     )
@@ -103,25 +106,42 @@ App.propTypes = {
     children: PropTypes.node.isRequired,
 }
 
+const Main = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 3rem 2rem auto;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    @media (max-width: 48em) {
+        margin-right: 4rem;
+    }
+`
+
 const Brand = styled.div`
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-column: 1 / 7;
+    grid-row: 1 / 2;
 `
 
 const Name = styled.div`
-    margin-top: 1rem;
-    margin-left: 0.5rem;
-    flex: 3;
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+    justify-self: start;
 `
 
 const ModeIcons = styled.div`
-    flex: 1 auto;
+    grid-column: 5 / 6;
+    grid-row: 1 / 2;
+    justify-self: start;
 `
 
-const Main = styled.div`
-    margin-top: 0.5rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+const Menu = styled.div`
+    grid-column: 6 / 7;
+`
+
+const Content = styled.div`
+    grid-column: 1 / 7;
+    grid-row-start: 3;
 `
