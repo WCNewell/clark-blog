@@ -30,6 +30,7 @@ $blue: #0ecee3;
 
 html, body {
     @include flexbox();
+    overflow-x: hidden;
 }
 
 *, *::after, *::before {
@@ -109,6 +110,12 @@ body.dark-mode {
     }    
 }
 
+.main {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
 a {
     text-decoration: none;
     cursor: pointer;
@@ -128,8 +135,9 @@ a {
   
 .sticky .sticky-inner {
     position: fixed;
+    top: 1rem;
+    right: 1rem;
     left: 0;
-    right: 0.5rem;
     z-index: 0;
 }
 
@@ -137,8 +145,7 @@ a {
     fill: $gold;
     height: 1.25rem;
     width: 1.25rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin: 0 1rem 0 1rem;
     cursor: pointer;
 }
 

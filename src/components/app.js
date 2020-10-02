@@ -87,7 +87,7 @@ const App = ({ children }) => {
     return (
         <ThemeContext.Provider value={'night'}>
             <>
-                <Main>
+                <Main className='main'>
                 <Layout />
                     <Header />
                     <Content>
@@ -110,12 +110,6 @@ const Main = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 3rem 2rem auto;
-    margin-top: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    @media (max-width: 48em) {
-        margin-right: 4rem;
-    }
 `
 
 const Brand = styled.div`
@@ -129,12 +123,20 @@ const Name = styled.div`
     grid-column: 2 / 4;
     grid-row: 1 / 2;
     justify-self: start;
+    margin-top: 0.5rem;
+    @media (max-width: 40em) {
+        margin-top: 0;
+    }
 `
 
 const ModeIcons = styled.div`
     grid-column: 5 / 6;
     grid-row: 1 / 2;
+    margin-top: 0.75rem;
     justify-self: start;
+    @media (max-width: 40em) {
+        grid-column: 4 / 6;
+    }
 `
 
 const Menu = styled.div`
