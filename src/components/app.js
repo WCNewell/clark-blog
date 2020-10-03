@@ -108,42 +108,37 @@ App.propTypes = {
 
 const Main = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 4;
     grid-template-rows: 3rem 2rem auto;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 `
 
 const Brand = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-column: 1 / 7;
-    grid-row: 1 / 2;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row: 1;
 `
 
 const Name = styled.div`
-    grid-column: 2 / 4;
-    grid-row: 1 / 2;
-    justify-self: start;
-    margin-top: 0.5rem;
-    @media (max-width: 40em) {
-        margin-top: 0;
-    }
+    grid-column: 2;
+    grid-row: 1;
 `
 
 const ModeIcons = styled.div`
-    grid-column: 5 / 6;
-    grid-row: 1 / 2;
-    margin-top: 0.75rem;
-    justify-self: start;
-    @media (max-width: 40em) {
-        grid-column: 4 / 6;
-    }
+    grid-column: 3;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+
 `
 
 const Menu = styled.div`
-    grid-column: 6 / 7;
+    display: flex;
+    justify-content: flex-end;
 `
 
 const Content = styled.div`
-    grid-column: 1 / 7;
-    grid-row-start: 3;
+
 `
