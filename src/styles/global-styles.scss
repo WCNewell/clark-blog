@@ -54,8 +54,8 @@ body.light-mode {
     
     .logo {
         fill: $black;
-        height: 3rem;
-        width: 3rem;
+        height: 3.75rem;
+        width: 3.75rem;
     }
 
     .name {
@@ -88,10 +88,8 @@ body.dark-mode {
     
     .logo {
         fill: $white;
-        height: 3rem;
-        width: 3rem;
-        display: flex;
-        justify-content: center;
+        height: 3.75rem;
+        width: 3.75rem;
     }
     
     .menu-item {
