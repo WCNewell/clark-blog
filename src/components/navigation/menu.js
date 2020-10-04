@@ -11,7 +11,6 @@ const Menu = ({ open, ...props }) => {
 
     return (
         <StyledMenu open={open} aria-hidden={!isHidden} {...props}>
-            <a className='menu-item' href='https://www.netlify.com/clarkfitness'><h3>fitness blog</h3></a>
             <Link className='menu-item' to="/" tabIndex={tabIndex} onClick={isHidden === true}>
                 <span aria-hidden="true"></span>
                     <h3>home</h3>
@@ -23,7 +22,12 @@ const Menu = ({ open, ...props }) => {
             <Link className='menu-item' to="/portfolio" tabIndex={tabIndex} onClick={isHidden === true}>
                 <span aria-hidden="true"></span>
                 <h3>portfolio</h3>
-            </Link>    
+            </Link>
+            <Link className='menu-item' to="/blog" tabIndex={tabIndex} onClick={isHidden === true}>
+                <span aria-hidden="true"></span>
+                    <h3>web blog</h3>
+            </Link>
+            <a className='menu-item' href='https://www.netlify.com/clarkfitness'><h3>fitness blog</h3></a>    
         </StyledMenu>
     )
 }
