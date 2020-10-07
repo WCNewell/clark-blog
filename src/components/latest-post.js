@@ -2,12 +2,12 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { StaticQuery, graphql } from 'gatsby'
 
-const RECENT_POSTS_QUERY = graphql`
-    query RecentPostsQuery {
+const LATEST_POST_QUERY = graphql`
+    query LatestPostQuery {
         allWordpressPost(filter:
             {status: {eq: "publish"},
             categories: {elemMatch: {name: {eq: "Software Development"}}}},
-            limit: 5, sort: {fields: [date], order: DESC}, skip: 1) {
+            limit: 1, sort: {fields: [date], order: DESC}) {
             edges {
                 node {
                     id
@@ -24,13 +24,13 @@ const RECENT_POSTS_QUERY = graphql`
 
 `
 
-const RecentPosts = () => (
+const LatestPost = () => (
     <StaticQuery
-        query={RECENT_POSTS_QUERY}
+        query={LATEST_POST_QUERY}
         render={data => {
             return (
-                <div className="recent-posts-widget">
-                    <h3>Recent Posts</h3>
+                <div>
+                    <h3>Latest Post</h3>
                     {
                         data.allWordpressPost.edges.map(edge => (
 
@@ -49,4 +49,4 @@ const RecentPosts = () => (
     />
 )
 
-export default RecentPosts
+export default LatestPost

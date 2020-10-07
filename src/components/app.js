@@ -107,68 +107,23 @@ App.propTypes = {
 }
 
 const Main = styled.div`
-    display: grid;
-    grid-template-rows: 3.5rem 2rem auto;
-    margin-top: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    
+      
 `
 
 const Brand = styled.div`
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-row: 1;
-    @media (min-width: 25em) {
-        grid-template-columns: repeat(5, 1fr)
-    }
-    @media (min-width: 37.25em) {
-        grid-template-columns: repeat(8, 1fr);
-    }
-    @media (min-width: 71.125em) {
-        grid-template-columns: repeat(16, 1fr);
-    }
+
 `
 
 const Name = styled.div`
-    grid-column: 2;
-    grid-row: 1;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    @media (min-width: 30em) {
-        grid-column: 2 / span 3;
-    }
+   
 `
 
 const ModeIcons = styled.div`
-    grid-column: 3;
-    grid-row: 1;
-    display: flex;
-    justify-content: center;
-    @media (min-width: 25em) {
-        grid-column: 4;
-    }
-    @media (min-width: 37.25em) {
-        grid-column: 7;
-    }
-    @media (min-width: 71.125em) {
-        grid-column: 15;
-    }
+   
 `
 
 const Menu = styled.div`
-    display: flex;
-    justify-content: flex-end;
-    @media (min-width: 25em) {
-        grid-column: 5;
-    }
-    @media (min-width: 37.25em) {
-        grid-column: 8;
-    }
-    @media (min-width: 71.125em) {
-        grid-column: 16;
-    }
+    
 `
 
 const Content = styled.div`
