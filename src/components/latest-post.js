@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { StaticQuery, graphql } from 'gatsby'
+import '../styles/global-styles.scss'
 
 const LATEST_POST_QUERY = graphql`
     query LatestPostQuery {
@@ -30,7 +31,7 @@ const LatestPost = () => (
         render={data => {
             return (
                 <div>
-                    <h3>Latest Post</h3>
+                    <h3 className='latest-post'>Latest Post</h3>
                     {
                         data.allWordpressPost.edges.map(edge => (
 

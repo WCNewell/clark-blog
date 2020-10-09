@@ -6,9 +6,11 @@ import LatestPost from '../components/latest-post'
 const IndexPage = () => (
     <>  
         <SEO title='Home' />
-        <RecentPosts />
         <LatestPost />
+        <RecentPosts />
     </>
 )
 
 export default IndexPage
+
+

@@ -18,7 +18,7 @@ export const ThemeContext = React.createContext('day')
 const Layout = () => {
     const theme = React.useContext(ThemeContext)
         return (
-                theme === 'night' ? <StarLayout /> : null
+                theme === 'night' ? <StarLayout className='stars'/> : null
         )
 }
 
@@ -87,7 +87,7 @@ const App = ({ children }) => {
     return (
         <ThemeContext.Provider value={'night'}>
             <>
-                <Main className='main'>
+                <Main>
                 <Layout />
                     <Header />
                     <Content>
@@ -107,25 +107,40 @@ App.propTypes = {
 }
 
 const Main = styled.div`
-      
+    display: grid;
+    grid-template-rows: 4rem 2rem 8rem 2rem repeat(4, auto);
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    grid-row-gap: 0.5rem;
+    grid-template-areas:
+        "header"
+        "recent posts" "latest posts"
 `
 
 const Brand = styled.div`
-
+    grid-area: header;
+    grid-template-columns: repeat(4, 1fr);
+    display: grid;
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
 `
 
 const Name = styled.div`
-   
+    grid-column: 2 / 3;
 `
 
 const ModeIcons = styled.div`
-   
+    grid-column: 3 / 4;
+    display: flex;
+    align-items: flex-start;
 `
 
 const Menu = styled.div`
-    
+    grid-column: 4 / 5;
 `
 
 const Content = styled.div`
-    
+    grid-column: 1 / 5;
+    grid-row: 3;
 `
