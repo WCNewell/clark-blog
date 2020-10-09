@@ -2,6 +2,7 @@ import React from 'react';
 import { bool } from 'prop-types'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
+import '../../styles/global-styles.scss'
 
 const Menu = ({ open, ...props }) => {
   
@@ -10,14 +11,23 @@ const Menu = ({ open, ...props }) => {
 
     return (
         <StyledMenu open={open} aria-hidden={!isHidden} {...props}>
-            <Link to="/" tabIndex={tabIndex} onClick={isHidden === true}>
+            <Link className='menu-item' to="/" tabIndex={tabIndex} onClick={isHidden === true}>
                 <span aria-hidden="true"></span>
-                    home
+                    <h3>home</h3>
             </Link>
-            <Link to="/about" tabIndex={tabIndex} onClick={isHidden === true}>
+            <Link className='menu-item' to="/about" tabIndex={tabIndex} onClick={isHidden === true}>
                 <span aria-hidden="true"></span>
-                about
+                <h3>about</h3>
             </Link>
+            <Link className='menu-item' to="/portfolio" tabIndex={tabIndex} onClick={isHidden === true}>
+                <span aria-hidden="true"></span>
+                <h3>portfolio</h3>
+            </Link>
+            <Link className='menu-item' to="/blog" tabIndex={tabIndex} onClick={isHidden === true}>
+                <span aria-hidden="true"></span>
+                    <h3>web blog</h3>
+            </Link>
+            <a className='menu-item' href='https://www.netlify.com/clarkfitness'><h3>fitness blog</h3></a>    
         </StyledMenu>
     )
 }
@@ -31,31 +41,22 @@ export default Menu
 export const StyledMenu = styled.nav`
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    background: ${({ theme }) => theme.primaryLight};
+    justify-content: flex-start;
     height: 100vh;
     text-align: left;
     padding: 2rem;
     position: absolute;
-    top: 0;
     right: -275px;
+    background-color: #effffa;
+    color:  #0b0111;
     transition: transform 0.3s ease-in-out;
-    transform: ${({ open }) => open ? 'translateX(-100%)' : 'translateX(0)'};
+    transform: ${({ open }) => open ? 'translateX(-150%)' : 'translateX(0)'};
 
     a {
         font-size: 2rem;
-        text-transform: uppercase;
         padding: 2rem 0;
-        font-weight: bold;
-        letter-spacing: 0.5rem;
-        color: ${({ theme }) => theme.primaryDark};
         outline: none;
         text-decoration: none;
         transition: color 0.3s linear;
-
-
-        &:hover {
-            color: ${({ theme }) => theme.primaryHover};
-        }
     }
 `

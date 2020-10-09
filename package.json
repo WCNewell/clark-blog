@@ -1,7 +1,7 @@
 {
   "name": "clark-blog",
   "private": true,
-  "description": "Clark Newell web development and fitness journey blog site",
+  "description": "Clark Newell web development blog site",
   "version": "0.1.0",
   "author": "Clark Newell <clark@clarknewell.tech>",
   "dependencies": {
@@ -26,6 +26,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
+    "react-sticky-header": "^0.2.0",
     "react-typography": "^0.16.19",
     "styled-components": "^5.1.1",
     "typography": "^0.16.19",
