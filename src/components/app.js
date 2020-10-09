@@ -18,7 +18,7 @@ export const ThemeContext = React.createContext('day')
 const Layout = () => {
     const theme = React.useContext(ThemeContext)
         return (
-                theme === 'night' ? <StarLayout className='stars'/> : null
+                theme === 'night' ? <StarLayout /> : null
         )
 }
 
@@ -86,7 +86,7 @@ const App = ({ children }) => {
         <ThemeContext.Provider value={'night'}>
             <>
                 <Main>
-                <Layout />
+                    <Layout />
                     <Header />
                     <Content>
                         {children}
