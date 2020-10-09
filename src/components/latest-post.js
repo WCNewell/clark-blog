@@ -31,7 +31,7 @@ const LatestPost = () => (
         render={data => {
             return (
                 <div>
-                    <h3 className='latest-post'>Latest Post</h3>
+                    <h3>Latest Post</h3>
                     {
                         data.allWordpressPost.edges.map(edge => (
 

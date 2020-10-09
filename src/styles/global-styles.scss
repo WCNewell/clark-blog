@@ -97,10 +97,11 @@ body.dark-mode {
     }
 
     .footer {
+        position: relative;
         height: 7rem;
         width: auto;
         background-color: $pink;
-        z-index: 2;
+        z-index: 1;
 
         .footer-text {
             color: $white;
@@ -125,10 +126,6 @@ a {
 .stars {
     position: absolute;
     z-index: 1;
-}
-
-.latest-post {
-    
 }
 
 .sticky-wrapper {

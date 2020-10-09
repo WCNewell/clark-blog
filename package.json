@@ -1,7 +1,7 @@
 {
   "name": "clark-blog",
   "private": true,
-  "description": "Clark Newell web development and fitness journey blog site",
+  "description": "Clark Newell web development blog site",
   "version": "0.1.0",
   "author": "Clark Newell <clark@clarknewell.tech>",
   "dependencies": {
