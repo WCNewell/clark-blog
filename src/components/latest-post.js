@@ -35,10 +35,10 @@ const LatestPost = () => (
                     {
                         data.allWordpressPost.edges.map(edge => (
 
-                            <div className="recent-posts-card" key={edge.node.id}>
-                                <small className="post-date">{ new Date(edge.node.date).toDateString() }</small>
-                                <Link to={`/posts/${edge.node.slug}`} className="post-title">{edge.node.title}</Link>
-                                <img className="post-thumbnail" src={edge.node.jetpack_featured_media_url} alt={edge.node.featured_image_alt} />
+                            <div className='recent-posts-card' key={edge.node.id}>
+                                <small className='post-date'>{ new Date(edge.node.date).toDateString() }</small>
+                                <Link to={`/posts/${edge.node.slug}`} className='post-title'>{edge.node.title}</Link>
+                                <img className='post-thumbnail' src={edge.node.jetpack_featured_media_url} alt={edge.node.featured_image_alt} />
                                 <div dangerouslySetInnerHTML={{ __html: edge.node.excerpt }} />
                             </div>
 
