@@ -72,13 +72,11 @@ const App = ({ children }) => {
                                     alt='moon icon for dark star mode'
                         />
                     </ModeIcons>
-                    <Menu>
-                        <div className={`sticky-wrapper${isSticky ? ' sticky' : ''}`} ref={ref}>
-                            <div className='sticky-inner'> 
-                                <Nav />
-                            </div>
+                    <div className={`sticky-wrapper${isSticky ? ' sticky' : ''}`} ref={ref}>
+                        <div className='sticky-inner'> 
+                            <Nav />
                         </div>
-                    </Menu>
+                    </div>
                 </Brand>
             </>
         )
@@ -108,7 +106,7 @@ App.propTypes = {
 
 const Main = styled.div`
     display: grid;
-    grid-template-rows: 4rem 2rem 8rem 2rem repeat(4, auto);
+    grid-template-rows: 4rem auto;
     margin-top: 0.5rem;
     margin-right: 0.5rem;
     margin-left: 0.5rem;
@@ -134,10 +132,6 @@ const ModeIcons = styled.div`
     grid-column: 3 / 4;
     display: flex;
     align-items: flex-start;
-`
-
-const Menu = styled.div`
-    grid-column: 4 / 5;
 `
 
 const Content = styled.div`
